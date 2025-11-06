@@ -9,7 +9,7 @@ const MapView = () => {
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        '&copy; <a href="http://www.openstreetmap.org/copyright" style="color:grey;">OpenStreetMap</a> &copy; <a href="https://openmaptiles.org/" style="color:grey;">OpenMapTiles</a>',
     }).addTo(map);
 
     // Marker
@@ -25,15 +25,21 @@ const MapView = () => {
   }, []);
 
   return (
+    <>
+    <div className="pt-5"></div>
     <div
       id="map"
+      className="z-0"
       style={{
-        height: "500px",
-        width: "100%",
-        borderRadius: "10px",
+        margin: 'auto',
+        height: "620px",
+        width: "90%",
+        border: "1px solid black",
         overflow: "hidden",
       }}
     />
+
+    </>   
   );
 };
 
